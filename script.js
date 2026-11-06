@@ -217,3 +217,88 @@ showQuestion();
 
 
 
+
+/* =====================================
+   🎲 TOTAL RANDOM CHAOS CLICK SYSTEM
+===================================== */
+
+const chaosEffects = [
+    () => {
+        document.body.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
+        setTimeout(() => document.body.style.filter = "", 1200);
+    },
+
+    () => {
+        document.body.classList.add("chaos-shake");
+        setTimeout(() => document.body.classList.remove("chaos-shake"), 600);
+    },
+
+    (x, y) => {
+        const emojis = ["👾", "🚀", "💜", "✨", "🐸", "🪩", "🌈", "⭐", "🍕", "🦄"];
+        const item = document.createElement("div");
+        item.className = "chaos-emoji";
+        item.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        item.style.left = x + "px";
+        item.style.top = y + "px";
+        document.body.appendChild(item);
+        setTimeout(() => item.remove(), 1300);
+    },
+
+    () => {
+        document.querySelectorAll("h2").forEach(el => {
+            el.style.transform = `rotate(${Math.random() * 12 - 6}deg)`;
+            setTimeout(() => el.style.transform = "", 1000);
+        });
+    },
+
+    (x, y) => {
+        const messages = [
+            "SYSTEM FEHLER 404 😂",
+            "Du hast das Internet verwirrt!",
+            "Ein Einhorn war hier 🦄",
+            "DIGITAL CHAOS AKTIVIERT!",
+            "Wer hat hier geklickt?!",
+            "Geheime Nachricht gefunden!",
+            "Du bist ein echter Hacker!",
+            "Ups. Das war nicht geplant."
+        ];
+
+        const popup = document.createElement("div");
+        popup.className = "chaos-popup";
+        popup.textContent = messages[Math.floor(Math.random() * messages.length)];
+        popup.style.left = Math.min(x, window.innerWidth - 270) + "px";
+        popup.style.top = Math.min(y, window.innerHeight - 100) + "px";
+        document.body.appendChild(popup);
+        setTimeout(() => popup.remove(), 1800);
+    },
+
+    () => {
+        const emojis = ["✨", "💥", "⭐", "💫", "🌟"];
+        for (let i = 0; i < 12; i++) {
+            const star = document.createElement("div");
+            star.className = "chaos-star";
+            star.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            star.style.left = Math.random() * 100 + "vw";
+            star.style.top = Math.random() * 100 + "vh";
+            document.body.appendChild(star);
+            setTimeout(() => star.remove(), 1500);
+        }
+    },
+
+    () => {
+        const original = document.title;
+        document.title = "👾 DU HAST CHAOS AUSGELÖST!";
+        setTimeout(() => document.title = original, 1500);
+    }
+];
+
+document.addEventListener("click", function(event) {
+    // Keine Effekte beim Klicken auf die Easter-Egg-Sammlung
+    if (event.target.closest("#eastereggs, #eggMessage")) return;
+
+    const randomEffect = chaosEffects[
+        Math.floor(Math.random() * chaosEffects.length)
+    ];
+
+    randomEffect(event.clientX, event.clientY);
+});
