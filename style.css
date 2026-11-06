@@ -1125,3 +1125,250 @@ footer small {
     0% { transform: scale(0) rotate(0); opacity: 1; }
     100% { transform: scale(2) rotate(360deg); opacity: 0; }
 }
+
+
+
+
+.digital-lab {
+    padding: 90px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #11152d, #242052, #351c60);
+    color: white;
+    overflow: hidden;
+}
+
+.lab-heading span {
+    color: #a9a0ff;
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+.lab-heading h2 {
+    font-size: 42px;
+    margin: 12px;
+}
+
+.lab-heading p {
+    color: #d5d0ff;
+}
+
+.laptop {
+    max-width: 780px;
+    margin: 45px auto 20px;
+    filter: drop-shadow(0 20px 30px #0008);
+}
+
+.laptop-screen {
+    position: relative;
+    background: #17172a;
+    border: 12px solid #777b91;
+    border-bottom-width: 18px;
+    border-radius: 18px 18px 8px 8px;
+    min-height: 430px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.screen-top {
+    height: 30px;
+    background: #292941;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 11px;
+    color: #c8c5ff;
+}
+
+.desktop {
+    min-height: 345px;
+    padding: 20px;
+    background:
+        radial-gradient(circle at 20% 20%, #8054c8 0, transparent 35%),
+        linear-gradient(135deg, #25245b, #132c50);
+}
+
+.desktop h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.desktop-date {
+    color: #c5c7ff;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.desktop-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 85px);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.desktop-icons button {
+    background: #ffffff18;
+    border: 1px solid #ffffff30;
+    border-radius: 12px;
+    color: white;
+    padding: 12px 5px;
+    cursor: pointer;
+    font-size: 25px;
+    transition: .2s;
+}
+
+.desktop-icons button:hover {
+    background: #ffffff35;
+    transform: translateY(-5px);
+}
+
+.desktop-icons button span {
+    display: block;
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+.desktop-note {
+    margin-top: 25px;
+    color: #ddd9ff;
+    font-size: 12px;
+}
+
+.taskbar {
+    height: 35px;
+    background: #17172a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    font-size: 11px;
+    color: #c9c5ff;
+}
+
+.taskbar button {
+    border: 0;
+    border-radius: 5px;
+    background: #6554c9;
+    color: white;
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+.laptop-base {
+    height: 24px;
+    background: linear-gradient(#aeb2c1, #646879);
+    border-radius: 0 0 45% 45%;
+    position: relative;
+}
+
+.laptop-keyboard {
+    color: #34394a;
+    font-size: 10px;
+    padding-top: 3px;
+}
+
+.laptop-touchpad {
+    position: absolute;
+    width: 90px;
+    height: 9px;
+    background: #85899a;
+    border-radius: 0 0 8px 8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.app-window {
+    display: none;
+    position: absolute;
+    inset: 45px 20px 45px;
+    background: #f7f5ff;
+    color: #25213d;
+    border-radius: 12px;
+    overflow: auto;
+    box-shadow: 0 10px 30px #0008;
+}
+
+.app-title {
+    background: #6554c9;
+    color: white;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-title button {
+    background: #ffffff30;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 4px 9px;
+}
+
+.app-content {
+    padding: 20px;
+    font-size: 14px;
+}
+
+.app-content input,
+.app-content textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #c9c2e9;
+    border-radius: 7px;
+    font: inherit;
+}
+
+.app-content button {
+    background: #6554c9;
+    color: white;
+    border: 0;
+    padding: 9px 14px;
+    margin: 5px 3px 5px 0;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.app-result {
+    background: #ece8ff;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 12px;
+    min-height: 20px;
+}
+
+.lab-footer {
+    color: #bdb6ff;
+    letter-spacing: 2px;
+    font-size: 11px;
+}
+
+.lab-footer span {
+    color: #6df5c1;
+}
+
+@media(max-width: 600px) {
+    .laptop-screen {
+        min-height: 450px;
+    }
+
+    .desktop-icons {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .desktop-icons button {
+        font-size: 21px;
+    }
+
+    .desktop {
+        padding: 12px;
+    }
+
+    .lab-heading h2 {
+        font-size: 32px;
+    }
+}
