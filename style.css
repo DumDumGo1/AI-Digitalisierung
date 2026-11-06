@@ -813,3 +813,365 @@ footer small {
         padding: 22px;
     }
 }
+
+
+
+
+
+
+/* =================================
+   EASTER EGG DATABASE
+================================= */
+
+.easter-section {
+    padding: 110px 9%;
+    background:
+        radial-gradient(ellipse at 50% 0%, #27245a55, transparent 60%),
+        #090e20;
+    text-align: center;
+}
+
+.easter-section h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(45px, 6vw, 70px);
+    margin: 25px 0;
+    letter-spacing: -3px;
+}
+
+.easter-section h2 span {
+    background: linear-gradient(90deg, #5eead4, #a78bfa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.easter-intro {
+    color: #a0abc4;
+    max-width: 550px;
+    margin: 0 auto 35px;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.egg-counter {
+    display: inline-flex;
+    gap: 15px;
+    align-items: center;
+    padding: 14px 22px;
+    border: 1px solid #5eead455;
+    background: #101b30;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.egg-counter strong {
+    color: #5eead4;
+    font-size: 15px;
+}
+
+.egg-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.egg-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    background: linear-gradient(145deg, #17213b, #101629);
+    border: 1px solid #ffffff17;
+    border-radius: 12px;
+    padding: 25px;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.35s;
+}
+
+.egg-card:hover {
+    transform: translateY(-7px);
+    border-color: #a78bfa;
+    box-shadow: 0 12px 35px #8b5cf633;
+}
+
+.egg-icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.egg-status {
+    color: #fb7185;
+    font-size: 9px;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 27px;
+    right: 20px;
+}
+
+.egg-card.unlocked .egg-status {
+    color: #5eead4;
+}
+
+.egg-card h3 {
+    font-family: 'Space Grotesk';
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.egg-card p {
+    color: #9eacc4;
+    font-size: 11px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.egg-hint {
+    color: #5eead4;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: auto;
+}
+
+.egg-instruction {
+    display: none;
+    width: 100%;
+    color: #cbd5e1;
+    background: #080f22;
+    border-left: 2px solid #a78bfa;
+    padding: 13px;
+    margin-top: 18px;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.egg-card.show-hint .egg-instruction {
+    display: block;
+    animation: hintAppear 0.3s ease;
+}
+
+.egg-card.show-hint .egg-hint {
+    color: #a78bfa;
+}
+
+@keyframes hintAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.egg-footer {
+    color: #68758f;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-top: 55px;
+}
+
+
+/* =================================
+   SECRET POPUP
+================================= */
+
+.egg-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #030610dd;
+    backdrop-filter: blur(12px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.egg-popup.active {
+    display: flex;
+    animation: popupFade 0.3s ease;
+}
+
+.popup-content {
+    background: linear-gradient(145deg, #1b2850, #101629);
+    border: 1px solid #5eead4;
+    border-radius: 16px;
+    max-width: 450px;
+    width: 100%;
+    padding: 45px 30px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 70px #5eead433;
+    animation: popupScale 0.35s ease;
+}
+
+.popup-content > div {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+.popup-content h2 {
+    font-family: 'Space Grotesk';
+    color: #5eead4;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.popup-content p {
+    color: #cbd5e1;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.close-egg {
+    position: absolute;
+    right: 17px;
+    top: 12px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@keyframes popupFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popupScale {
+    from { transform: scale(0.85); }
+    to { transform: scale(1); }
+}
+
+
+/* =================================
+   GEHEIME EFFEKTE
+================================= */
+
+/* MATRIX */
+
+body.matrix-mode {
+    background: #001507;
+    color: #5eff75;
+}
+
+body.matrix-mode * {
+    text-shadow: 0 0 8px #00ff41;
+}
+
+body.matrix-mode .section,
+body.matrix-mode .dark-section {
+    background: #001507;
+}
+
+/* RAINBOW */
+
+body.rainbow-mode .hero h1,
+body.rainbow-mode .section h2,
+body.rainbow-mode .logo {
+    animation: rainbow 2s linear infinite;
+}
+
+@keyframes rainbow {
+    0% { color: #ff5252; }
+    25% { color: #ffe66d; }
+    50% { color: #5eead4; }
+    75% { color: #a78bfa; }
+    100% { color: #ff5252; }
+}
+
+/* SPACE */
+
+body.space-mode {
+    background:
+        radial-gradient(circle at 20% 30%, #593c89, transparent 30%),
+        radial-gradient(circle at 80% 70%, #173e80, transparent 35%),
+        #050316;
+}
+
+body.space-mode .section,
+body.space-mode .dark-section,
+body.space-mode .easter-section {
+    background: transparent;
+}
+
+/* SUPER SPEED */
+
+body.speed-mode * {
+    transition-duration: 0.08s !important;
+    animation-duration: 0.5s !important;
+}
+
+/* GHOST */
+
+.ghost-message {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9998;
+    font-size: 35px;
+    animation: ghostFloat 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes ghostFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* DEVELOPER MODE */
+
+body.developer-mode::after {
+    content: "SYSTEM ONLINE  //  ACCESS GRANTED  //  DIGITAL.WORLD";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 13px;
+    text-align: center;
+    background: #5eead4;
+    color: #080b19;
+    font-family: monospace;
+    font-size: 11px;
+    z-index: 999;
+}
+
+/* NEON */
+
+body.neon-mode .card,
+body.neon-mode .info-box {
+    border-color: #d946ef;
+    box-shadow: 0 0 20px #d946ef55;
+}
+
+body.neon-mode h1,
+body.neon-mode h2,
+body.neon-mode h3 {
+    text-shadow: 0 0 18px #d946ef99;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+    .egg-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .egg-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .easter-section {
+        padding: 75px 7%;
+    }
+}
